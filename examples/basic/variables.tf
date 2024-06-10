@@ -45,3 +45,9 @@ variable "access_tags" {
   description = "A list of access tags to apply to the resources created by the module."
   default     = []
 }
+
+variable "verify_worker_network_readiness" {
+  type        = bool
+  description = "By setting this to true, a script will run kubectl commands to verify that all worker nodes can communicate successfully with the master. If the runtime does not have access to the kube cluster to run kubectl commands, this should be set to false."
+  default     = false
+}
